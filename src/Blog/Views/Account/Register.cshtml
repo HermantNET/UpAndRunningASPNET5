@@ -1,0 +1,28 @@
+﻿@model Blog.Models.Account.RegisterViewModel
+
+<h2>New user Registration</h2>
+
+<div asp-validation-summary="All">
+    <form role="form" asp-action="Register" class="form-horizontal login-register">
+
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <input type="email" asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <input type="password" asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ConfirmPassword"></label>
+            <input type="password" asp-for="ConfirmPassword" class="form-control" />
+            <span asp-validation-for="ConfirmPassword"></span>
+        </div>
+
+        <button class="btn btn-default" type="submit">Confirm</button>
+    </form>
+</div>

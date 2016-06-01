@@ -1,0 +1,12 @@
+﻿@model Blog.Models.ArchivedPostSummary[]
+
+<ol>
+    @foreach (var summary in Model)
+    {
+        <li>
+            <a href="#">@summary.Date.ToString("MMMM, yyyy")</a>
+            <span>(@summary.Count)</span>
+        </li>
+
+    }
+</ol>

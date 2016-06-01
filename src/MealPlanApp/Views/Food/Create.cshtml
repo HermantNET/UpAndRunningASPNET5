@@ -1,0 +1,64 @@
+﻿@model MealPlanApp.Models.Food
+@{
+    Layout = "_Layout";
+}
+
+<form asp-controller="Food" asp-action="Create" asp-antiforgery="true">
+    <div asp-validation-summary="All"></div>
+
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" />
+        <span asp-validation-for="Name"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Calories"></label>
+        <input asp-for="Calories" />
+        <span asp-validation-for="Calories"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Carbohydrate"></label>
+        <input asp-for="Carbohydrate" />
+        <span asp-validation-for="Carbohydrate"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Protein"></label>
+        <input asp-for="Protein" />
+        <span asp-validation-for="Protein"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Fat"></label>
+        <input asp-for="Fat" />
+        <span asp-validation-for="Fat"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Breakfast"></label>
+        <input asp-for="Breakfast" />
+        <span asp-validation-for="Breakfast"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Lunch"></label>
+        <input asp-for="Lunch" />
+        <span asp-validation-for="Lunch"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Dinner"></label>
+        <input asp-for="Dinner" />
+        <span asp-validation-for="Dinner"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Snack"></label>
+        <input asp-for="Snack" />
+        <span asp-validation-for="Snack"></span>
+    </div>
+
+    <button class="btn btn-default" type="submit">Create Post</button>
+</form>

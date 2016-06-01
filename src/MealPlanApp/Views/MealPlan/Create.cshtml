@@ -1,0 +1,34 @@
+﻿@model MealPlanApp.Models.MealPlan
+@{
+    Layout = "_Layout";
+}
+
+<form asp-controller="MealPlan" asp-action="Create" asp-antiforgery="true">
+    <div asp-validation-summary="All"></div>
+
+    <div class="form-group">
+        <label asp-for="TotalCalories"></label>
+        <input asp-for="TotalCalories" />
+        <span asp-validation-for="TotalCalories"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Carbohydrates"></label>
+        <input asp-for="Carbohydrates" />
+        <span asp-validation-for="Carbohydrates"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Proteins"></label>
+        <input asp-for="Proteins" />
+        <span asp-validation-for="Proteins"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Fats"></label>
+        <input asp-for="Fats" />
+        <span asp-validation-for="Fats"></span>
+    </div>
+
+    <button class="btn btn-default" type="submit">Save</button>
+</form>

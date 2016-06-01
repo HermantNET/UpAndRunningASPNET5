@@ -1,0 +1,23 @@
+﻿@model Blog.Models.Post
+@{ 
+    Layout = "_Layout";
+}
+
+
+<form asp-controller="Posts" asp-action="Create" asp-antiforgery="true">
+    <div asp-validation-summary="All"></div>
+
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" />
+        <span asp-validation-for="Title"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Body"></label>
+        <textarea asp-for="Body"></textarea>
+        <span asp-validation-for="Body"></span>
+    </div>
+
+    <button class="btn btn-default" type="submit">Create Post</button>
+</form>

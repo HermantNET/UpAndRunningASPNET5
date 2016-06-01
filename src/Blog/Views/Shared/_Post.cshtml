@@ -1,0 +1,9 @@
+﻿@inject Blog.Models.FormattingService Format
+@model Blog.Models.Post
+
+<body>
+    <h2>@Model.Title</h2>
+    <p>@Model.Author</p>
+    <p>@Format.AsReadableDate(Model.Posted)</p>
+    <p>@Model.Body</p>
+</body>

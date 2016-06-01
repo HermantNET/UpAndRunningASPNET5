@@ -1,0 +1,15 @@
+﻿{
+  "AppSettings": {
+    "SiteTitle": "Meal Plan Application",
+    "CacheDbResults": true
+  },
+  "DefaultAdminUsername": "admin@test.com",
+  "DefaultAdminPassword": "@dmin!",
+  "Data": {
+    "DefaultConnection": {
+      // Use a shared (and running) LocalDB database when executing in IIS e.g.
+      // "Server=(localdb)\\.\\IIS_DB;Database=MusicStore;Trusted_Connection=False;MultipleActiveResultSets=true;User ID=iis_login;Password=********"
+      "ConnectionString": "Server=(localdb)\\MSSQLLocalDB;Database=Meal;Trusted_Connection=True;MultipleActiveResultSets=true;Connect Timeout=30;"
+    }
+  }
+}

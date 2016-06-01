@@ -1,0 +1,10 @@
+﻿@model MealPlanApp.Models.MealPlan
+
+@if (User.Identity.IsAuthenticated)
+{
+    <h1>My Meal Plan</h1>
+    <p>@Model.TotalCalories</p>
+    <p><span>Carbs: @Model.MacroRatio[0]</span> <span>Proteins: @Model.MacroRatio[1]</span> <span>Fats: @Model.MacroRatio[2]</span></p>
+} else  {
+    <p>Please sign in.</p>
+}

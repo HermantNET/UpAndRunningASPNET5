@@ -10,7 +10,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "UpAndRunningASPNET5", "src\UpAndRunningASPNET5\UpAndRunningASPNET5.xproj", "{49D8D9ED-4435-405F-BDCE-EC4A02B70E48}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Blog", "src\Blog\Blog.xproj", "{8D38B53B-E4C7-4AAC-AF62-57E60E104531}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "MealPlanApp", "src\MealPlanApp\MealPlanApp.xproj", "{A5BD80C2-5BEC-4536-97BC-B684D63195EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,15 +20,20 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{49D8D9ED-4435-405F-BDCE-EC4A02B70E48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{49D8D9ED-4435-405F-BDCE-EC4A02B70E48}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{49D8D9ED-4435-405F-BDCE-EC4A02B70E48}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{49D8D9ED-4435-405F-BDCE-EC4A02B70E48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D38B53B-E4C7-4AAC-AF62-57E60E104531}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D38B53B-E4C7-4AAC-AF62-57E60E104531}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D38B53B-E4C7-4AAC-AF62-57E60E104531}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D38B53B-E4C7-4AAC-AF62-57E60E104531}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5BD80C2-5BEC-4536-97BC-B684D63195EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5BD80C2-5BEC-4536-97BC-B684D63195EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5BD80C2-5BEC-4536-97BC-B684D63195EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5BD80C2-5BEC-4536-97BC-B684D63195EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{49D8D9ED-4435-405F-BDCE-EC4A02B70E48} = {92E5DE36-4907-46AF-99DE-E21D503AE342}
+		{8D38B53B-E4C7-4AAC-AF62-57E60E104531} = {92E5DE36-4907-46AF-99DE-E21D503AE342}
+		{A5BD80C2-5BEC-4536-97BC-B684D63195EF} = {92E5DE36-4907-46AF-99DE-E21D503AE342}
 	EndGlobalSection
 EndGlobal
