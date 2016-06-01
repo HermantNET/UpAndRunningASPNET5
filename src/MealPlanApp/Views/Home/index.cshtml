@@ -1,6 +1,6 @@
 ﻿@model MealPlanApp.Models.MealPlan
 
-@if (User.Identity.IsAuthenticated)
+@if (ViewBag.isTrue)
 {
     <h1>My Meal Plan</h1>
     <p>@Model.TotalCalories</p>

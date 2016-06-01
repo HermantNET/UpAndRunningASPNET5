@@ -8,9 +8,18 @@ namespace MealPlanApp.Models
     public class FormattingService
     {
 
-        public string AsReadableDate(DateTime dateTime)
+        public string[] TildeToArray(string rose)
         {
-            return dateTime.ToString("d");
+            var roseBud = rose.Split(new string[] { "~~" }, StringSplitOptions.None);
+
+            return roseBud;
+        }
+
+        public string[] AsteriskToArray(string sapling)
+        {
+            var oak = sapling.Split(new string[] { "**" }, StringSplitOptions.None);
+
+            return oak;
         }
     }
 }

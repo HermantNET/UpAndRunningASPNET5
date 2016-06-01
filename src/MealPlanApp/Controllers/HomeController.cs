@@ -18,11 +18,17 @@ namespace MealPlanApp.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            var mealPlan =
+            if (_db.MealPlans.Any(x => x.Author == User.Identity.Name))
+            {
+                var mealPlan =
                 _db.MealPlans
                 .Single(x => x.Author == User.Identity.Name);
-
+                ViewBag.isTrue = true;
             return View(mealPlan);
+            } else {
+                ViewBag.isTrue = false;
+                return View();
+            }
         }
 
         public IActionResult error()

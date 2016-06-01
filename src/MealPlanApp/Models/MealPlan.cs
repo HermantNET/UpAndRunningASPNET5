@@ -19,5 +19,12 @@ namespace MealPlanApp.Models
         public double Fats { get { return MacroRatio[2]; } set { MacroRatio[2] = value; } }
 
         public double[] MacroRatio = { 40, 30, 30 };
+
+        public string Breakfast { get; set; }
+        public string Lunch { get; set; }
+        public string Dinner { get; set; }
+        public string Snack { get; set; }
+
+        public string Plan = "Banana~~Cereal**PB&J**Steak~~Beans**Carrot~~Candy";
     }
 }
