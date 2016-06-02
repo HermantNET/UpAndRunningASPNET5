@@ -17,6 +17,27 @@ namespace MealPlanApp.Models
             Database.EnsureCreated();
         }
 
+        //public IQueryable<FoodsSummary> GetFoods()
+        //{
+        //    return
+        //        Foods
+        //            .GroupBy(x => new { x.Name, x.Calories, x.Breakfast, x.Lunch, x.Dinner, x.Snack })
+        //            .Select(group => new FoodsSummary
+        //            {
+        //                Name = group.Key.Name,
+        //                Calories = group.Key.Calories,
+        //                Breakfast = group.Key.Breakfast,
+        //                Lunch = group.Key.Lunch,
+        //                Dinner = group.Key.Dinner,
+        //                Snack = group.Key.Snack
+        //            });
+        //}
+
+        public IQueryable<Food> GetFoods(string UserIdentity)
+        {
+            return Foods.Where(x => x.Author == UserIdentity);
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);

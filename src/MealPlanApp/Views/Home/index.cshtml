@@ -1,4 +1,5 @@
-﻿@model MealPlanApp.Models.MealPlan
+﻿@inject MealPlanApp.Models.FormattingService Format
+@model MealPlanApp.Models.MealPlan
 
 @if (ViewBag.isTrue)
 {
@@ -8,3 +9,46 @@
 } else  {
     <p>Please sign in.</p>
 }
+
+
+@if (Model.Plan != null)
+{
+    string[] breakfast = null;
+    string[] lunch = null;
+    string[] dinner = null;
+    string[] snack = null;
+
+    string[] time = Format.AsteriskToArray(Model.Plan);
+    breakfast = Format.TildeToArray(time[0]);
+    lunch = Format.TildeToArray(time[1]);
+    dinner = Format.TildeToArray(time[2]);
+    snack = Format.TildeToArray(time[3]);
+    
+    <ul>Breakfast</ul>
+    foreach (string food in breakfast)
+    {
+        <li>@food</li>
+    }
+
+    <ul>Lunch</ul>
+    foreach (string food in lunch)
+    {
+        <li>@food</li>
+    }
+
+    <ul>Dinner</ul>
+    foreach (string food in dinner)
+    {
+        <li>@food</li>
+    }
+
+    <ul>Snacks</ul>
+    foreach (string food in snack)
+    {
+        <li>@food</li>
+    }
+}
+
+<form asp-controller="MealPlan" asp-action="Generate" asp-antiforgery="true">
+    <button class="btn btn-default" type="submit">Generate</button>
+</form>

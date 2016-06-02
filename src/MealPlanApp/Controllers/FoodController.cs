@@ -39,7 +39,7 @@ namespace MealPlanApp.Controllers
             _dataContext.Foods.Add(food);
             await _dataContext.SaveChangesAsync();
 
-            return RedirectToAction("Food", food.FoodID);
+            return RedirectToAction("Food", food);
         }
 
         public IActionResult Food(long FoodID)

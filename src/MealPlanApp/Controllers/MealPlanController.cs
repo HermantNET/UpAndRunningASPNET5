@@ -46,6 +46,7 @@ namespace MealPlanApp.Controllers
             //Determine whether user already has a meal plan
             if (_dataContext.MealPlans.Any(x => x.Author == User.Identity.Name))
             {
+                //if users already has meal plan, update values
                 _dataContext.MealPlans
                    .Where(x => x.Author == User.Identity.Name).Single().TotalCalories = mealPlan.TotalCalories;
                 _dataContext.MealPlans
@@ -60,6 +61,27 @@ namespace MealPlanApp.Controllers
             }
 
             //Commit changes to database
+            await _dataContext.SaveChangesAsync();
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Generate(MealPlan mealPlan)
+        {
+            mealPlan = _dataContext.MealPlans
+                   .Where(x => x.Author == User.Identity.Name).Single();
+
+            mealPlan.Plan = MealPlanCalculator.MyMealPlan(mealPlan.TotalCalories, mealPlan.MacroRatio, User.Identity.Name);
+
+            if (_dataContext.MealPlans.Any(x => x.Author == User.Identity.Name))
+            {
+                _dataContext.MealPlans
+                   .Where(x => x.Author == User.Identity.Name).Single().Plan = mealPlan.Plan;
+            }
+
             await _dataContext.SaveChangesAsync();
 
             return RedirectToAction("Index", "Home");
