@@ -19,6 +19,13 @@ namespace MealPlanApp.Controllers
             _dataContext = dataContext;
         }
 
+        public IActionResult Index()
+        {
+            var Foods = _dataContext.Foods.Where(x => x.Author == User.Identity.Name).ToArray();
+
+            return View(Foods);
+        }
+
         [HttpGet]
         [Authorize]
         public IActionResult Create()
@@ -45,8 +52,15 @@ namespace MealPlanApp.Controllers
         public IActionResult Food(long FoodID)
         {
             var food = _dataContext.Foods.Single(x => x.FoodID == FoodID);
+            _dataContext.Foods.Remove(food);
 
-            return View(food);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Delete(long FoodID)
+        {
+            var toBeDeleted = _dataContext.Foods.Single(x => x.FoodID == FoodID);
+            toBeDeleted.
         }
 
     }

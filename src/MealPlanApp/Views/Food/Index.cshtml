@@ -1,0 +1,41 @@
+﻿<a asp-action="Create" asp-controller="Food" class="btn navbar-btn link">Add new food</a>
+
+@foreach (var food in Model)
+{
+    <div class="col-sm-2">
+        <h2>@food.Name</h2>
+
+        <div id="album-details">
+            <p>
+                <em>Calories:</em>
+                @food.Calories
+            </p>
+            <p>
+                <em>Carbohydrate:</em>
+                <label>@food.Carbohydrate</label>
+            </p>
+            <p>
+                <em>Protein:</em>
+                <label>@food.Protein</label>
+            </p>
+            <p>
+                <em>Fat:</em>
+                <label>@food.Fat</label>
+            </p>
+            @*<p class="button">
+                    <a asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-id="@Model.AlbumId">Add to cart</a>
+                </p>*@
+        </div>
+    </div>
+}
+
+@*<ul id="food-list" class="list-unstyled">
+        @foreach (var food in Model.Foods)
+        {
+            <li class="col-lg-2 col-md-2 col-sm-2 col-xs-4 container">
+                <a asp-controller="Food" asp-action="Food" asp-route-id="@food.FoodID">
+                    <h5 class="control-label">@food.Name</h5>
+                </a>
+            </li>
+        }
+    </ul>*@

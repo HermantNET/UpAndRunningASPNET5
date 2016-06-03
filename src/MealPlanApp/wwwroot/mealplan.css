@@ -1,9 +1,9 @@
 ﻿h1 {
-    color: #0000FF;
+    color: #0026ff;
 }
 
 h2 {
-    color: #00FF00;
+    color: #1244FF;
 }
 
 .form-group {
@@ -44,4 +44,9 @@ hr {
 
 .Plan-Col {
     border-left: 2px solid rgba(0, 0, 0, 0.2)
+}
+
+.link {
+    display: block;
+    text-align: right;
 }
