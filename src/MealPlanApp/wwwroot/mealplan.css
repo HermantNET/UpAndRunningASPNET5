@@ -1,0 +1,47 @@
+﻿h1 {
+    color: #0000FF;
+}
+
+h2 {
+    color: #00FF00;
+}
+
+.form-group {
+    padding: 5px;
+}
+
+.site-register {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.lebutton {
+    float: right;
+    margin-top: 20px;
+}
+
+body {
+    background-color: #1244FF;
+}
+
+.container {
+    padding: 20px;
+    background-color: floralwhite;
+    border: 2px thick black;
+    border-radius: 4px;
+    margin-top: 2em;
+}
+
+.inline {
+    display: inline;
+}
+
+hr {
+    height: 12px;
+    border: 0;
+    box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
+}
+
+.Plan-Col {
+    border-left: 2px solid rgba(0, 0, 0, 0.2)
+}

@@ -22,7 +22,7 @@ gulp.task('copyJavascript', function () {
 gulp.task('copyCss', function () {
     gulp.src([
         'wwwroot/lib/bootstrap/dist/css/bootstrap.css',
-        'wwwroot/blog.css'
+        'wwwroot/mealplan.css'
     ])
     .pipe(uglifyCss())
     .pipe(concat('site.css'))

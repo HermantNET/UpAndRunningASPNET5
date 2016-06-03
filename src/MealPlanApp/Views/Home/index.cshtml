@@ -4,9 +4,11 @@
 @if (ViewBag.isTrue)
 {
     <h1>My Meal Plan</h1>
-    <p>@Model.TotalCalories</p>
-    <p><span>Carbs: @Model.MacroRatio[0]</span> <span>Proteins: @Model.MacroRatio[1]</span> <span>Fats: @Model.MacroRatio[2]</span></p>
-} else  {
+    <p>Total Calories: @Model.TotalCalories</p>
+    <p><span>Carbs: @Model.MacroRatio[0] </span> <span class="Plan-Col"> Proteins: @Model.MacroRatio[1] </span> <span class="Plan-Col"> Fats: @Model.MacroRatio[2] </span></p>
+}
+else
+{
     <p>Please sign in.</p>
 }
 
@@ -23,32 +25,50 @@
     lunch = Format.TildeToArray(time[1]);
     dinner = Format.TildeToArray(time[2]);
     snack = Format.TildeToArray(time[3]);
-    
-    <ul>Breakfast</ul>
-    foreach (string food in breakfast)
-    {
-        <li>@food</li>
-    }
 
-    <ul>Lunch</ul>
-    foreach (string food in lunch)
-    {
-        <li>@food</li>
-    }
+    <div class="row">
+        <div id="Breakfast" class="col-sm-3">
+            <h3>Breakfast</h3>
+            <ul>
+                @foreach (string food in breakfast)
+                {
+                    <li>@food</li>
+                }
+            </ul>
+        </div>
 
-    <ul>Dinner</ul>
-    foreach (string food in dinner)
-    {
-        <li>@food</li>
-    }
+        <div id="Lunch" class="Plan-Col col-sm-3">
+            <h3>Lunch</h3>
+            <ul>
+                @foreach (string food in lunch)
+                {
+                    <li>@food</li>
+                }
+            </ul>
+        </div>
 
-    <ul>Snacks</ul>
-    foreach (string food in snack)
-    {
-        <li>@food</li>
-    }
+        <div id="Dinner" class="Plan-Col col-sm-3">
+            <h3>Dinner</h3>
+            <ul>
+                @foreach (string food in dinner)
+                {
+                    <li>@food</li>
+                }
+            </ul>
+        </div>
+
+        <div id="Snacks" class="Plan-Col col-sm-3">
+            <h3>Snacks</h3>
+            <ul>
+                @foreach (string food in snack)
+                {
+                    <li>@food</li>
+                }
+            </ul>
+        </div>
+    </div>
 }
 
-<form asp-controller="MealPlan" asp-action="Generate" asp-antiforgery="true">
-    <button class="btn btn-default" type="submit">Generate</button>
+<form asp-controller="MealPlan" asp-action="Generate" asp-antiforgery="true" class="submit-form">
+    <button class="btn btn-primary lebutton" type="submit">Generate</button>
 </form>
