@@ -22,9 +22,10 @@
                 <em>Fat:</em>
                 <label>@food.Fat</label>
             </p>
-            @*<p class="button">
-                    <a asp-controller="ShoppingCart" asp-action="AddToCart" asp-route-id="@Model.AlbumId">Add to cart</a>
-                </p>*@
+            <form asp-action="Delete" asp-controller="Food" asp-antiforgery="true">
+                <input type="number" value="@food.FoodID" hidden />
+                <button type="submit">Submit</button>
+            </form>
         </div>
     </div>
 }

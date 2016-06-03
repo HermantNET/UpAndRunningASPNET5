@@ -7,7 +7,6 @@
 <body>
     <div class="container">
         <nav class="navbar">
-
             <ul class="nav nav-pills">
                 <li>
                     <a asp-action="index" asp-controller="Home" class="btn navbar-btn">Home</a>
@@ -18,18 +17,25 @@
                 <li>
                     <a asp-action="Create" asp-controller="MealPlan" class="btn navbar-btn">Settings</a>
                 </li>
-
                 @if (User.Identity.IsAuthenticated)
-            {
-                    <form asp-action="Logout" asp-controller="Account" class="navbar-form navbar-right">
-                        <p class="inline navbar-text">Hello, @User.Identity.Name</p>
-                        <button type="submit" class="inline btn navbar-btn">Logout</button>
-                    </form>
+                {
+                    <li class="btn navbar-btn navbar-right">
+                        <a asp-action="Logout" asp-controller="Account">
+                            Logout
+                        </a>
+                    </li>
+                    <li class="navbar-text navbar-right disabled">
+                        <a>Hello, @User.Identity.Name</a>
+                    </li>
                 }
                 else
                 {
-                    <a asp-action="Register" asp-controller="Account" class="btn navbar-btn">Register</a>
-                    <a asp-action="Login" asp-controller="Account" class="btn navbar-btn">Login</a>
+                    <li>
+                        <a asp-action="Register" asp-controller="Account" class="btn navbar-btn">Register</a>
+                    </li>
+                    <li>
+                        <a asp-action="Login" asp-controller="Account" class="btn navbar-btn">Login</a>
+                    </li>
                 }
             </ul>
         </nav>
